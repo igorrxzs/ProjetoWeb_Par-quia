@@ -59,8 +59,8 @@ a {
 }
 
 .logo img {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -138,14 +138,14 @@ a {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: 105vh;
   background: linear-gradient(
-    120deg,
-    var(--creme) 0%,
-    var(--creme) 55%,
-    var(--vinho) 55%,
-    var(--vinho) 100%
-  );
+  -110deg,
+  var(--vinho) 0%,
+  var(--vinho) 50%,
+  var(--creme) 50%,
+  var(--creme) 100%
+);
   color: var(--azul);
   display: grid;
   grid-template-columns: 1fr 470px;
@@ -166,17 +166,28 @@ a {
   font-size: 0.85rem;
 }
 
-.hero h1 {
-  font-family: "Cinzel", serif;
-  font-size: clamp(3rem, 7vw, 5.2rem);
-  line-height: 1.05;
-  margin: 15px 0;
-  color: var(--azul);
+.hero-tag{
+  color: var(--vinho);
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 25px;
 }
 
-.hero h1 span {
-  color: var(--vinho);
-  font-style: italic;
+.linha1{
+    display:block;
+    color:#0d2545;
+    font-size: clamp(3rem, 5vw, 6.2rem);
+    line-height: 1;
+}
+
+.linha2{
+    display:block;
+    color:#8b1732;
+    font-size: clamp(3rem, 5vw, 6.2rem);
+    line-height: 1;
+    margin-top: 10px;
 }
 
 .hero p {
@@ -605,6 +616,7 @@ footer small {
   .navbar {
     padding: 12px 5%;
   }
+    
 
   .logo img {
     width: 45px;
