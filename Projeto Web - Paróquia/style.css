@@ -166,13 +166,17 @@ a {
   font-size: 0.85rem;
 }
 
-.hero-tag{
-  color: var(--vinho);
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 0.85rem;
-  margin-bottom: 25px;
+.hero-logo{
+  width: 140px;
+  height: auto;
+  display: block;
+  margin: 10px 0 20px 0;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.18));
+  transition: 0.3s;
+}
+
+.hero-logo:hover{
+  transform: scale(1.05);
 }
 
 .linha1{
@@ -277,7 +281,7 @@ a {
   color: var(--creme);
   font-size: 1.4rem;
   padding: 8px 12px;
-  border-radius: 50%;
+  border-radius: 50%  ;
   cursor: pointer;
 }
 
@@ -291,15 +295,6 @@ a {
 
 .next {
   right: 14px;
-}
-
-/* AVISO */
-.announcement {
-  background: var(--vinho);
-  color: var(--creme);
-  text-align: center;
-  padding: 14px 20px;
-  font-family: "Raleway", sans-serif;
 }
 
 /* SEÇÕES */
@@ -379,23 +374,6 @@ a {
   letter-spacing: 1px;
 }
 
-/* VÍDEOS */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.video-grid video {
-  width: 100%;
-  max-height: 430px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: var(--sombra);
-  border: 3px solid var(--vinho);
-  background: var(--azul);
-}
-
 /* EVENTO */
 .evento {
   background: var(--creme);
@@ -461,25 +439,71 @@ a {
 }
 
 /* PASTORAIS */
-.cards {
+#pastorais {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#pastorais .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#pastorais .section-title span {
+  color: var(--azul);
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+}
+
+#pastorais .section-title h2 {
+  font-family: "Cinzel", serif;
+  font-size: 2.8rem;
+  color: var(--azul);
+  margin-top: 10px;
+}
+
+#pastorais .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
-.card {
+#pastorais .card {
+  background: var(--branco);
+  color: var(--azul);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
   border-top: 5px solid var(--vinho);
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+#pastorais .card:hover {
+  transform: translateY(-8px);
 }
 
-.card h3 {
+#pastorais .card h3 {
   color: var(--vinho);
   font-family: "Cinzel", serif;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+#pastorais .card p {
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  #pastorais .cards {
+    grid-template-columns: 1fr;
+  }
+
+  #pastorais .section-title h2 {
+    font-size: 2rem;
+  }
 }
 
 /* CONTATO */
@@ -745,50 +769,90 @@ footer small {
   .wpp-chat { bottom: 18px; right: 16px; }
   .wpp-btn { width: 54px; height: 54px; }
   .wpp-bubble { max-width: 180px; padding: 10px 12px; }
-}#sobre .section-title span {
-  margin-top: -20px;
-  display: block;
 }
 
-#sobre .section-title h2 {
-  margin-top: -5px;
+/* ROLAGEM DIRETA POR SEÇÕES COM ZOOM */
+
+html {
+  scroll-behavior: smooth;
 }
 
-#sobre {
-  padding-top: 40px;   /* ← era 80px, reduz o espaço do topo */
+.snap-section {
+  min-height: 100vh;
+  transform: scale(0.96);
+  opacity: 0.85;
+  transition: transform 0.55s ease, opacity 0.55s ease;
 }
+
+.snap-section.section-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.section.snap-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 110px;
+  padding-bottom: 80px;
+}
+
+.hero.snap-section {
+  min-height: 100vh;
+}
+
+/* evita travamento no celular */
+@media (max-width: 850px) {
+  .historia-fotos {
+  grid-template-columns: 1fr;
+}
+
+.historia-card {
+  height: 350px;
+}
+  .hero-logo{
+  width: 100px;
+  margin: 0 auto 20px auto;
+}
+
+  .snap-section {
+    transform: none;
+    opacity: 1;
+  }
+
+  .section.snap-section {
+    padding-top: 100px;
+  }
+}
+
+/* FOTOS DA HISTÓRIA */
 
 .historia-fotos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .historia-card {
   position: relative;
+  height: 500px;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  height: 500px;        /* ← era 180px, agora mais alto */
   border: 3px solid var(--vinho);
   box-shadow: var(--sombra);
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .historia-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
 .historia-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.historia-card:hover img {
-  transform: scale(1.05);
 }
 
 .historia-overlay {
@@ -796,23 +860,28 @@ footer small {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(123,28,49,0.85));
-  color: #fff;
   padding: 20px 12px 12px;
-  font-family: "Cinzel", serif;
-  font-size: 0.9rem;
   text-align: center;
+  color: white;
+  font-family: "Cinzel", serif;
+
+  background: linear-gradient(
+    transparent,
+    rgba(123, 28, 49, 0.85)
+  );
 }
 
 /* MODAL */
+
 .historia-modal {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.55);
   z-index: 99999;
-  align-items: center;
+
   justify-content: center;
+  align-items: center;
 }
 
 .historia-modal.aberto {
@@ -821,21 +890,21 @@ footer small {
 
 .historia-modal-box {
   background: var(--creme);
-  border-radius: 14px;
-  padding: 40px;
-  max-width: 500px;
   width: 90%;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  max-width: 500px;
+
+  padding: 40px;
+  border-radius: 14px;
+
   border-top: 5px solid var(--vinho);
-  animation: slideUpWpp 0.3s ease;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 
 .historia-modal-box h3 {
-  font-family: "Cinzel", serif;
   color: var(--vinho);
-  font-size: 1.4rem;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
+  font-family: "Cinzel", serif;
 }
 
 .historia-modal-box p {
@@ -847,13 +916,10 @@ footer small {
   position: absolute;
   top: 14px;
   right: 16px;
+
   background: none;
   border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-  color: #aaa;
-}
 
-.historia-fechar:hover {
-  color: var(--vinho);
+  font-size: 1.2rem;
+  cursor: pointer;
 }

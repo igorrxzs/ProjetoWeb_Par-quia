@@ -1,316 +1,326 @@
-  <!DOCTYPE html>
-  <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Paróquia São Cristóvão</title>
+  <title>Paróquia São Cristóvão</title>
 
-    <link rel="icon" type="image/png" href="imagens/logo.png">
-    <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="imagens/logo.png">
+  <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:wght@400;500&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-  </head>
-  <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:wght@400;500&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <nav class="navbar" id="navbar">
-      <div class="logo">
-        <img src="imagens/logo.png" alt="Logo da Paróquia São Cristóvão">
-        <div>
-          <small>Paróquia</small>
-          <strong>São Cristóvão</strong>
-        </div>
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <img src="imagens/logo.png" alt="Logo da Paróquia São Cristóvão">
+      <div>
+        <small>Paróquia</small>
+        <strong>São Cristóvão</strong>
       </div>
+    </div>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#inicio" class="nav-link">Início</a></li>
-        <li><a href="#sobre" class="nav-link">Sobre</a></li>
-        <li><a href="#videos" class="nav-link">Vídeos</a></li>
-        <li><a href="#evento" class="nav-link">Evento</a></li>
-        <li><a href="#missas" class="nav-link">Missas</a></li>
-        <li><a href="#pastorais" class="nav-link">Pastorais</a></li>
-        <li><a href="#contato" class="nav-link contato-btn">Contato</a></li>
-      </ul>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio" class="nav-link">Início</a></li>
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="#pastorais" class="nav-link">Pastorais</a></li>
+      <li><a href="#evento" class="nav-link">Evento</a></li>
+      <li><a href="#missas" class="nav-link">Missas</a></li>
+      <li><a href="#contato" class="nav-link contato-btn">Contato</a></li>
+    </ul>
 
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <p class="hero-tag">Bem-vindos à</p>  
-        <h1>
-            <span class="linha1">Paróquia</span>
-            <span class="linha2">São Cristóvão</span>
-          </h1>
-        <p>
-          Uma comunidade de fé, acolhimento e evangelização, celebrando 30 anos
-          de história, missão e serviço ao próximo.
+  <section class="hero snap-section" id="inicio">
+    <div class="hero-content">
+      <p class="hero-tag">Bem-vindos à</p>
+
+      <img src="imagens/logo.png" alt="Logo da Paróquia São Cristóvão" class="hero-logo">
+
+      <h1>
+        <span class="linha1">Paróquia</span>
+        <span class="linha2">São Cristóvão</span>
+      </h1>
+
+      <p>
+        Uma comunidade de fé, acolhimento e evangelização, celebrando 30 anos
+        de história, missão e serviço ao próximo.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#missas" class="btn primary">Horários de Missa</a>
+        <a href="#sobre" class="btn secondary">Conheça a Paróquia</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="carousel">
+        <div class="slide active">
+          <img src="imagens/Padre_São Cristóvão.JPG" alt="Padre da Paróquia São Cristóvão">
+        </div>
+
+        <div class="slide">
+          <img src="imagens/comunhao.jpeg" alt="Procissão da comunidade">
+        </div>
+
+        <div class="slide">
+          <img src="imagens/nossasenhoradefatima.jpeg" alt="Nossa Senhora de Fátima">
+        </div>
+
+        <div class="slide">
+          <img src="imagens/santamissa.jpg" alt="Santa Missa de Posse">
+        </div>
+
+        <div class="slide">
+          <img src="imagens/vigario.jpg" alt="Padres da Paróquia São Cristóvão">
+        </div>
+
+        <button class="carousel-btn prev" id="prevBtn">❮</button>
+        <button class="carousel-btn next" id="nextBtn">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section snap-section" id="sobre">
+    <div class="section-title">
+      <span>Nossa História</span>
+      <h2>Sobre a Paróquia</h2>
+    </div>
+
+    <div class="sobre-grid">
+      <div class="sobre-texto">
+        <p class="lead">
+          A Paróquia São Cristóvão é um espaço de fé, oração e fraternidade,
+          aberto a todos que buscam acolhimento espiritual.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#missas" class="btn primary">Horários de Missa</a>
-          <a href="#sobre" class="btn secondary">Conheça a Paróquia</a>
+        <p>
+          Inspirada por São Cristóvão, padroeiro dos viajantes, nossa comunidade
+          deseja acompanhar cada fiel em sua caminhada de vida e fé.
+        </p>
+
+        <div class="historia-fotos">
+          <div class="historia-card" onclick="abrirHistoria(1)">
+            <img src="imagens/Paroco.jpeg" alt="Nosso Pároco">
+            <div class="historia-overlay">
+              <span>Nosso Pároco</span>
+            </div>
+          </div>
+
+          <div class="historia-card" onclick="abrirHistoria(2)">
+            <img src="imagens/Paroquial.jpeg" alt="Vigário Paroquial">
+            <div class="historia-overlay">
+              <span>Vigário Paroquial</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="hero-media">
-        <div class="carousel">
-
-          <div class="slide active">
-            <img src="imagens/Padre_São Cristóvão.JPG" alt="Padre da Paróquia São Cristóvão">
-          </div>
-
-          <div class="slide">
-            <img src="imagens/comunhao.jpeg" alt="Procissão da comunidade">
-          </div>
-
-          <div class="slide">
-            <img src="imagens/nossasenhoradefatima.jpeg" alt="Nossa Senhora de Fátima">
-          </div>
-
-          <div class="slide">
-            <img src="imagens/santamissa.jpg" alt="Santa Missa de Posse">
-          </div>
-
-          <div class="slide">
-            <img src="imagens/vigario.jpg" alt="Padres da Paróquia São Cristóvão">
-          </div>
-
-          <button class="carousel-btn prev" id="prevBtn">❮</button>
-          <button class="carousel-btn next" id="nextBtn">❯</button>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="announcement">
-      ✦ Paróquia São Cristóvão — 30 anos de fé, missão e comunidade ✦
-    </div>
-
-    <section class="section" id="sobre">
-  <div class="section-title">
-    <span>Nossa História</span>
-    <h2>Sobre a Paróquia</h2>
-  </div>
-
-  <div class="sobre-grid">
-    <div class="sobre-texto">
-      <p class="lead">
-        A Paróquia São Cristóvão é um espaço de fé, oração e fraternidade,
-        aberto a todos que buscam acolhimento espiritual.
-      </p>
-      <p>
-        Inspirada por São Cristóvão, padroeiro dos viajantes, nossa comunidade
-        deseja acompanhar cada fiel em sua caminhada de vida e fé.
-      </p>
-
-      <!-- FOTOS CLICÁVEIS -->
-      <div class="historia-fotos">
-        <div class="historia-card" onclick="abrirHistoria(1)">
-          <img src="imagens/Paroco.jpeg" alt="História 1">
-          <div class="historia-overlay">
-            <span>Nosso Pároco</span>
-          </div>
+      <div class="stats">
+        <div>
+          <strong class="stat-number">30</strong>
+          <span>Anos de história</span>
         </div>
 
-        <div class="historia-card" onclick="abrirHistoria(2)">
-          <img src="imagens/Paroquial.jpeg " alt="História 2">
-          <div class="historia-overlay">
-            <span>Vigário Paroquial</span>
-          </div>
+        <div>
+          <strong class="stat-number">12</strong>
+          <span>Grupos pastorais</span>
+        </div>
+
+        <div>
+          <strong class="stat-number">+2mil</strong>
+          <span>Famílias atendidas</span>
         </div>
       </div>
     </div>
 
-    <div class="stats">
-      <div>
-        <strong class="stat-number">30</strong>
-        <span>Anos de história</span>
-      </div>
-      <div>
-        <strong class="stat-number">12</strong>
-        <span>Grupos pastorais</span>
-      </div>
-      <div>
-        <strong class="stat-number">+2mil</strong>
-        <span>Famílias atendidas</span>
+    <div class="historia-modal" id="historiaModal">
+      <div class="historia-modal-box">
+        <button class="historia-fechar" onclick="fecharHistoria()">✕</button>
+        <h3 id="modalTitulo"></h3>
+        <p id="modalTexto"></p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- MODAL DE HISTÓRIA -->
-  <div class="historia-modal" id="historiaModal">
-    <div class="historia-modal-box">
-      <button class="historia-fechar" onclick="fecharHistoria()">✕</button>
-      <h3 id="modalTitulo"></h3>
-      <p id="modalTexto"></p>
+  <section class="section snap-section" id="pastorais">
+    <div class="section-title">
+      <span>Comunidade Viva</span>
+      <h2>Pastorais e Serviços</h2>
     </div>
-  </div>
-</section>
 
-    <section class="section videos" id="videos">
-      <div class="section-title">
-        <span>Momentos da Comunidade</span>
-        <h2>Vídeos da Paróquia</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Catequese</h3>
+        <p>Formação cristã para crianças, jovens e adultos.</p>
       </div>
 
-      <div class="video-grid">
-      <video controls>
-      <source src="videos/video1.mp4" type="video/mp4">
-     Seu navegador não suporta vídeo.
-      </video>
-
-      <video controls>
-      <source src="videos/video2.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-      </video>
-      </div>
-    </section>
-
-
-    <section class="section evento" id="evento">
-      <div class="section-title">
-        <span>Evento Atual</span>
-        <h2>Participe da nossa programação</h2>
+      <div class="card">
+        <h3>Terço dos Homens</h3>
+        <p>Momento de oração, união e fortalecimento da fé.</p>
       </div>
 
-      <div class="evento-box">
-        <div class="evento-info">
-          <h3>Inscrições Abertas</h3>
-
-          <p>
-            A Paróquia São Cristóvão está realizando uma atividade especial para
-            a comunidade.
-          </p>
-
-          <p>
-            Clique no botão para preencher o formulário oficial de participação.
-          </p>
-        </div>
-
-        <a href="https://forms.gle/pxXa9bzEPuLMuSTw6" target="_blank" class="btn primary">
-          Fazer Inscrição
-        </a>
-      </div>
-    </section>
-
-    <section class="section dark" id="missas">
-      <div class="section-title light">
-        <span>Celebrações</span>
-        <h2>Horários de Missa</h2>
+      <div class="card">
+        <h3>Pastoral da Caridade</h3>
+        <p>Ações solidárias em favor de famílias necessitadas.</p>
       </div>
 
-      <div class="missa-box">
-        <div class="missa-row header-row">
-          <span>Dia</span>
-          <span>Horário</span>
-          <span>Observação</span>
-        </div>
-
-        <div class="missa-row">
-          <span>Quarta-feira</span>
-          <span>19h30</span>
-          <span>Missa semanal</span>  
-        </div>
-
-        <div class="missa-row">
-          <span>Sábado</span>
-          <span>18h00</span>
-          <span>Missa dominical</span>
-        </div>
-
-        <div class="missa-row destaque">
-          <span>Domingo</span>
-          <span>08h00 e 19h00</span>
-          <span>Missa da comunidade</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pastorais">
-      <div class="section-title">
-        <span>Comunidade Viva</span>
-        <h2>Pastorais e Serviços</h2>
+      <div class="card">
+        <h3>Servos do Altar</h3>
+        <p>Formação cristã para crianças, jovens e adultos.</p>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Catequese</h3>
-          <p>Formação cristã para crianças, jovens e adultos.</p>
-        </div>
-
-        <div class="card">
-          <h3>Terço dos Homens</h3>
-          <p>Momento de oração, união e fortalecimento da fé.</p>
-        </div>
-
-        <div class="card">
-          <h3>Pastoral da Caridade</h3>
-          <p>Ações solidárias em favor de famílias necessitadas.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark" id="contato">
-      <div class="section-title light">
-        <span>Fale Conosco</span>
-        <h2>Contato e Localização</h2>
+      <div class="card">
+        <h3>Pastoral do Dízimo</h3>
+        <p>Momento de oração, união e fortalecimento da fé.</p>
       </div>
 
-      <div class="contato-grid">
-        <div class="contato-info">
-          <p><strong>📍 Endereço:</strong> Rua Carlos Jorge Schmidt, 402, Recanto Campo Belo</p>
-          <p><strong>📞 Telefone:</strong> (11) 3000-0000</p>
-          <p><strong>💬 WhatsApp:</strong> (11) 9 9999-9999</p>
-          <p><strong>📧 E-mail:</strong> secretaria@paroquiasaocristovao.com.br</p>
-          <p><strong>🕐 Secretaria:</strong> Segunda a Sexta, das 9h às 17h</p>
-          
-        </div>
-
-        <div class="mapa">
-          <iframe
-            src="https://www.google.com/maps?q=Rua%20Carlos%20Jorge%20Schmidt%2C%20402%2C%20Recanto%20Campo%20Belo&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAT FLUTUANTE WHATSAPP -->
-    <div class="wpp-chat" id="wppChat">
-      <div class="wpp-bubble" id="wppBubble">
-        <div class="wpp-avatar">
-          <img src="imagens/logo.png" alt="Paróquia">
-        </div>
-        <div class="wpp-text">
-          <strong>Paróquia São Cristóvão</strong>
-          <p>Olá! Como podemos te ajudar? 😊</p>
-        </div>
-        <button class="wpp-close" id="wppClose">✕</button>
+      <div class="card">
+        <h3>Liturgia</h3>
+        <p>Ações solidárias em favor de famílias necessitadas.</p>
       </div>
 
-      <a class="wpp-btn" href="https://wa.me/551159798559?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20a%20Paróquia%20São%20Cristóvão." target="_blank" id="wppBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
-          <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.773L0 32l8.463-2.004A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.771-1.853l-.485-.289-5.024 1.189 1.224-4.894-.317-.502A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.26-9.867c-.398-.199-2.355-1.162-2.72-1.295-.365-.133-.631-.199-.897.199-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.199-1.681-.619-3.203-1.976-1.184-1.056-1.983-2.36-2.216-2.758-.232-.398-.025-.613.175-.811.18-.178.398-.465.598-.697.199-.232.266-.398.398-.664.133-.266.066-.498-.033-.697-.1-.199-.897-2.163-1.23-2.96-.323-.775-.652-.67-.897-.682l-.764-.013c-.266 0-.697.1-1.063.498-.365.398-1.396 1.362-1.396 3.323s1.43 3.855 1.629 4.121c.199.266 2.815 4.297 6.821 6.027.954.412 1.699.658 2.28.842.957.305 1.829.262 2.517.159.768-.114 2.355-.963 2.688-1.893.332-.93.332-1.727.232-1.893-.099-.166-.365-.266-.763-.465z"/>
-        </svg>
+      <div class="card">
+        <h3>Ministros do Altar</h3>
+        <p>Formação cristã para crianças, jovens e adultos.</p>
+      </div>
+
+      <div class="card">
+        <h3>Vicentinos</h3>
+        <p>Momento de oração, união e fortalecimento da fé.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pascom</h3>
+        <p>Responsável por todos os meios de comunicação da paróquia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section evento snap-section" id="evento">
+    <div class="section-title">
+      <span>Evento Atual</span>
+      <h2>Participe da nossa programação</h2>
+    </div>
+
+    <div class="evento-box">
+      <div class="evento-info">
+        <h3>Inscrições Abertas</h3>
+
+        <p>
+          A Paróquia São Cristóvão está realizando uma atividade especial para
+          a comunidade.
+        </p>
+
+        <p>
+          Clique no botão para preencher o formulário oficial de participação.
+        </p>
+      </div>
+
+      <a href="https://forms.gle/pxXa9bzEPuLMuSTw6" target="_blank" class="btn primary">
+        Fazer Inscrição
       </a>
     </div>
+  </section>
 
-    <footer>
-      <p>© 2026 Paróquia São Cristóvão — Projeto Web</p>
-      <small>"Eu sou o caminho, a verdade e a vida." — João 14,6</small>
-    </footer>
+  <section class="section dark snap-section" id="missas">
+    <div class="section-title light">
+      <span>Celebrações</span>
+      <h2>Horários de Missa</h2>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
-  </html>
+    <div class="missa-box">
+      <div class="missa-row header-row">
+        <span>Dia</span>
+        <span>Horário</span>
+        <span>Observação</span>
+      </div>
+
+      <div class="missa-row">
+        <span>Quarta-feira</span>
+        <span>19h30</span>
+        <span>Missa semanal</span>
+      </div>
+
+      <div class="missa-row">
+        <span>Sábado</span>
+        <span>18h00</span>
+        <span>Missa dominical</span>
+      </div>
+
+      <div class="missa-row destaque">
+        <span>Domingo</span>
+        <span>08h00 e 19h00</span>
+        <span>Missa da comunidade</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark snap-section" id="contato">
+    <div class="section-title light">
+      <span>Fale Conosco</span>
+      <h2>Contato e Localização</h2>
+    </div>
+
+    <div class="contato-grid">
+      <div class="contato-info">
+        <p><strong>📍 Endereço:</strong> Rua Carlos Jorge Schmidt, 402, Recanto Campo Belo</p>
+        <p><strong>📞 Telefone:</strong> (11) 3000-0000</p>
+        <p><strong>💬 WhatsApp:</strong> (11) 9 9999-9999</p>
+        <p><strong>📧 E-mail:</strong> secretaria@paroquiasaocristovao.com.br</p>
+        <p><strong>🕐 Secretaria:</strong> Segunda a Sexta, das 9h às 17h</p>
+      </div>
+
+      <div class="mapa">
+        <iframe
+          src="https://www.google.com/maps?q=Rua%20Carlos%20Jorge%20Schmidt%2C%20402%2C%20Recanto%20Campo%20Belo&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <div class="wpp-chat" id="wppChat">
+    <div class="wpp-bubble" id="wppBubble">
+      <div class="wpp-avatar">
+        <img src="imagens/logo.png" alt="Paróquia">
+      </div>
+
+      <div class="wpp-text">
+        <strong>Paróquia São Cristóvão</strong>
+        <p>Olá! Como podemos te ajudar? 😊</p>
+      </div>
+
+      <button class="wpp-close" id="wppClose">✕</button>
+    </div>
+
+    <a 
+      class="wpp-btn" 
+      href="https://wa.me/551159798559?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20a%20Paróquia%20São%20Cristóvão." 
+      target="_blank"
+      id="wppBtn">
+      💬
+    </a>
+  </div>
+
+  <footer>
+    <p>© 2026 Paróquia São Cristóvão — Projeto Web</p>
+    <small>“Eu sou o caminho, a verdade e a vida.” — João 14,6</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

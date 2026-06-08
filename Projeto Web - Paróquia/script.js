@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+let slideAtual = 0;
+
+document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("navbar");
   const navLinks = document.getElementById("navLinks");
   const hamburger = document.getElementById("hamburger");
@@ -7,154 +9,133 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
-  let currentSlide = 0;
-
-  window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 60);
-    setActiveLink();
-  });
-
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("open");
-    document.body.style.overflow = navLinks.classList.contains("open") ? "hidden" : "";
-  });
-
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("open");
-      document.body.style.overflow = "";
-    });
-  });
-
-  document.addEventListener("click", e => {
-    if (
-      navLinks.classList.contains("open") &&
-      !navLinks.contains(e.target) &&
-      !hamburger.contains(e.target)
-    ) {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("open");
-      document.body.style.overflow = "";
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 60) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
     }
   });
 
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("open");
+  });
+
+  const links = document.querySelectorAll(".nav-link");
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function () {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("open");
+    });
+  });
+
+  function mostrarSlide(numero) {
+    slides.forEach(function (slide) {
+      slide.classList.remove("active");
+    });
+
+    slides[numero].classList.add("active");
   }
 
-  nextBtn.addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+  nextBtn.addEventListener("click", function () {
+    slideAtual++;
+
+    if (slideAtual >= slides.length) {
+      slideAtual = 0;
+    }
+
+    mostrarSlide(slideAtual);
   });
 
-  prevBtn.addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
+  prevBtn.addEventListener("click", function () {
+    slideAtual--;
+
+    if (slideAtual < 0) {
+      slideAtual = slides.length - 1;
+    }
+
+    mostrarSlide(slideAtual);
   });
 
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+  setInterval(function () {
+    slideAtual++;
+
+    if (slideAtual >= slides.length) {
+      slideAtual = 0;
+    }
+
+    mostrarSlide(slideAtual);
   }, 5000);
 
-  function setActiveLink() {
-    const sections = document.querySelectorAll("section[id]");
-    const links = document.querySelectorAll(".nav-link");
+  const linhasMissa = document.querySelectorAll(".missa-row:not(.header-row)");
 
-    let current = "";
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - navbar.offsetHeight - 80;
-
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    links.forEach(link => {
-      link.classList.remove("active-link");
-
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active-link");
-      }
-    });
-  }
-
-  const revealTargets = document.querySelectorAll(
-    ".card, .missa-row:not(.header-row), .contato-info, .mapa, .stats div, .video-grid video"
-  );
-
-  revealTargets.forEach(el => el.classList.add("reveal"));
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  revealTargets.forEach(el => observer.observe(el));
-
-  const whatsappBtn = document.getElementById("whatsappBtn");
-
-  whatsappBtn.addEventListener("click", e => {
-    e.preventDefault();
-
-    const phone = "5511999999999";
-    const message = encodeURIComponent(
-      "Olá! Gostaria de mais informações sobre a Paróquia São Cristóvão."
-      
-    );
-
-    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-  });
-
-  document.querySelectorAll(".missa-row:not(.header-row)").forEach(row => {
-    row.addEventListener("click", () => {
-      document.querySelectorAll(".missa-row").forEach(r => {
-        r.style.background = "";
+  linhasMissa.forEach(function (linha) {
+    linha.addEventListener("click", function () {
+      linhasMissa.forEach(function (item) {
+        item.style.background = "";
       });
 
-      row.style.background = "rgba(123, 28, 49, 0.16)";
+      linha.style.background = "rgba(123, 28, 49, 0.16)";
     });
   });
-}); 
 
-document.getElementById('wppClose').addEventListener('click', function () {
-  document.getElementById('wppBubble').classList.add('hidden');
-});// MODAL DE HISTÓRIAS
-const historias = {
-  1: {
-    titulo: "Nosso Pároco",
-    texto: "A Paróquia São Cristóvão foi fundada há 30 anos com o sonho de construir uma comunidade de fé sólida no bairro. Desde os primeiros passos, contou com a dedicação de famílias que acreditaram na força da oração e da união. Hoje, essa história continua viva em cada celebração e em cada rosto que passa por nossas portas."
-  },
-  2: {
-    titulo: "Vigário Paroquial",
-    texto: "Nossa missão é evangelizar, acolher e servir. Inspirados pelo exemplo de São Cristóvão, que carregou o próximo em seus ombros, buscamos ser ponte entre as pessoas e Deus. Por meio das pastorais, missas e ações sociais, levamos esperança e amor a mais de 2 mil famílias da nossa comunidade."
-  } 
-};
+  const wppClose = document.getElementById("wppClose");
+  const wppBubble = document.getElementById("wppBubble");
 
-function abrirHistoria(num) {
-  document.getElementById('modalTitulo').textContent = historias[num].titulo;
-  document.getElementById('modalTexto').textContent = historias[num].texto;
-  document.getElementById('historiaModal').classList.add('aberto');
+  wppClose.addEventListener("click", function () {
+    wppBubble.classList.add("hidden");
+  });
+
+  const secoes = document.querySelectorAll(".snap-section");
+
+  const zoom = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        secoes.forEach(function (secao) {
+          secao.classList.remove("section-active");
+        });
+
+        entrada.target.classList.add("section-active");
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  secoes.forEach(function (secao) {
+    zoom.observe(secao);
+  });
+
+  const modal = document.getElementById("historiaModal");
+
+  modal.addEventListener("click", function (evento) {
+    if (evento.target === modal) {
+      fecharHistoria();
+    }
+  });
+});
+
+function abrirHistoria(numero) {
+  const modal = document.getElementById("historiaModal");
+  const titulo = document.getElementById("modalTitulo");
+  const texto = document.getElementById("modalTexto");
+
+  if (numero === 1) {
+    titulo.textContent = "Nosso Pároco";
+    texto.textContent = "A Paróquia São Cristóvão foi fundada há 30 anos com o sonho de construir uma comunidade de fé sólida no bairro. Desde os primeiros passos, contou com a dedicação de famílias que acreditaram na força da oração e da união.";
+  }
+
+  if (numero === 2) {
+    titulo.textContent = "Vigário Paroquial";
+    texto.textContent = "Nossa missão é evangelizar, acolher e servir. Inspirados pelo exemplo de São Cristóvão, buscamos ser ponte entre as pessoas e Deus por meio das pastorais, missas e ações sociais.";
+  }
+
+  modal.classList.add("aberto");
 }
 
 function fecharHistoria() {
-  document.getElementById('historiaModal').classList.remove('aberto');
+  const modal = document.getElementById("historiaModal");
+  modal.classList.remove("aberto");
 }
-
-// Fechar clicando fora do modal
-document.getElementById('historiaModal').addEventListener('click', function(e) {
-  if (e.target === this) fecharHistoria();
-});
-
-// Fechar balão do WhatsApp
-document.getElementById('wppClose').addEventListener('click', function () {
-  document.getElementById('wppBubble').classList.add('hidden');
-});
