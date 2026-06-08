@@ -742,7 +742,7 @@ footer small {
 }
 
 .wpp-btn {
-  width: 62px;               /* ← maior */
+  width: 62px;
   height: 62px;
   background: #25d366;
   border-radius: 50%;
@@ -814,11 +814,6 @@ html {
   width: 100px;
   margin: 0 auto 20px auto;
 }
-
-  .snap-section {
-    transform: none;
-    opacity: 1;
-  }
 
   .section.snap-section {
     padding-top: 100px;
@@ -922,4 +917,16 @@ html {
 
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.snap-section {
+  min-height: 100vh;
+  transform: scale(0.94);
+  opacity: 0.75;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.snap-section.section-active {
+  transform: scale(1);
+  opacity: 1;
 }
