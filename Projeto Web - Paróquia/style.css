@@ -644,3 +644,105 @@ footer small {
     font-size: 1.2rem;
   }
 }
+/* CHAT FLUTUANTE WHATSAPP */
+.wpp-chat {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99999;           /* ← bem alto pra ficar na frente de tudo */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.wpp-bubble {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 16px 16px 0 16px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  max-width: 300px;
+  position: relative;
+  animation: slideUpWpp 0.4s ease;
+}
+
+.wpp-bubble.hidden {
+  display: none;
+}
+
+@keyframes slideUpWpp {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.wpp-avatar img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #25d366;
+  flex-shrink: 0;
+}
+
+.wpp-text strong {
+  display: block;
+  font-family: "Cinzel", serif;
+  font-size: 0.78rem;
+  color: var(--azul);
+  margin-bottom: 3px;
+}
+
+.wpp-text p {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.82rem;
+  color: #444;
+  margin: 0;
+}
+
+.wpp-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.wpp-close:hover {
+  color: var(--vinho);
+}
+
+.wpp-btn {
+  width: 62px;               /* ← maior */
+  height: 62px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  transition: transform 0.3s;
+  animation: pulseWpp 2.5s infinite;
+  flex-shrink: 0;
+}
+
+.wpp-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulseWpp {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+@media (max-width: 500px) {
+  .wpp-chat { bottom: 18px; right: 16px; }
+  .wpp-btn { width: 54px; height: 54px; }
+  .wpp-bubble { max-width: 180px; padding: 10px 12px; }
+}

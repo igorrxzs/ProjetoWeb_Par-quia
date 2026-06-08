@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const phone = "5511999999999";
     const message = encodeURIComponent(
       "Olá! Gostaria de mais informações sobre a Paróquia São Cristóvão."
+      
     );
 
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
@@ -123,3 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 }); 
+
+document.getElementById('wppClose').addEventListener('click', function () {
+  document.getElementById('wppBubble').classList.add('hidden');
+});
