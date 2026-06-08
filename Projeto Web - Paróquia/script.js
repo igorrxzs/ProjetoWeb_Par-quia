@@ -127,4 +127,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('wppClose').addEventListener('click', function () {
   document.getElementById('wppBubble').classList.add('hidden');
+});// MODAL DE HISTÓRIAS
+const historias = {
+  1: {
+    titulo: "Nosso Pároco",
+    texto: "A Paróquia São Cristóvão foi fundada há 30 anos com o sonho de construir uma comunidade de fé sólida no bairro. Desde os primeiros passos, contou com a dedicação de famílias que acreditaram na força da oração e da união. Hoje, essa história continua viva em cada celebração e em cada rosto que passa por nossas portas."
+  },
+  2: {
+    titulo: "Vigário Paroquial",
+    texto: "Nossa missão é evangelizar, acolher e servir. Inspirados pelo exemplo de São Cristóvão, que carregou o próximo em seus ombros, buscamos ser ponte entre as pessoas e Deus. Por meio das pastorais, missas e ações sociais, levamos esperança e amor a mais de 2 mil famílias da nossa comunidade."
+  } 
+};
+
+function abrirHistoria(num) {
+  document.getElementById('modalTitulo').textContent = historias[num].titulo;
+  document.getElementById('modalTexto').textContent = historias[num].texto;
+  document.getElementById('historiaModal').classList.add('aberto');
+}
+
+function fecharHistoria() {
+  document.getElementById('historiaModal').classList.remove('aberto');
+}
+
+// Fechar clicando fora do modal
+document.getElementById('historiaModal').addEventListener('click', function(e) {
+  if (e.target === this) fecharHistoria();
+});
+
+// Fechar balão do WhatsApp
+document.getElementById('wppClose').addEventListener('click', function () {
+  document.getElementById('wppBubble').classList.add('hidden');
 });

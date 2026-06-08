@@ -94,42 +94,65 @@
     </div>
 
     <section class="section" id="sobre">
-      <div class="section-title">
-        <span>Nossa História</span>
-        <h2>Sobre a Paróquia</h2>
-      </div>
+  <div class="section-title">
+    <span>Nossa História</span>
+    <h2>Sobre a Paróquia</h2>
+  </div>
 
-      <div class="sobre-grid">
-        <div>
-          <p class="lead">
-            A Paróquia São Cristóvão é um espaço de fé, oração e fraternidade,
-            aberto a todos que buscam acolhimento espiritual.
-          </p>
+  <div class="sobre-grid">
+    <div class="sobre-texto">
+      <p class="lead">
+        A Paróquia São Cristóvão é um espaço de fé, oração e fraternidade,
+        aberto a todos que buscam acolhimento espiritual.
+      </p>
+      <p>
+        Inspirada por São Cristóvão, padroeiro dos viajantes, nossa comunidade
+        deseja acompanhar cada fiel em sua caminhada de vida e fé.
+      </p>
 
-          <p>
-            Inspirada por São Cristóvão, padroeiro dos viajantes, nossa comunidade
-            deseja acompanhar cada fiel em sua caminhada de vida e fé.
-          </p>
+      <!-- FOTOS CLICÁVEIS -->
+      <div class="historia-fotos">
+        <div class="historia-card" onclick="abrirHistoria(1)">
+          <img src="imagens/Paroco.jpeg" alt="História 1">
+          <div class="historia-overlay">
+            <span>Nosso Pároco</span>
+          </div>
         </div>
 
-        <div class="stats">
-          <div>
-            <strong class="stat-number">30</strong>
-            <span>Anos de história</span>
-          </div>
-
-          <div>
-            <strong class="stat-number">12</strong>
-            <span>Grupos pastorais</span>
-          </div>
-
-          <div>
-            <strong class="stat-number">+2mil</strong>
-            <span>Famílias atendidas</span>
+        <div class="historia-card" onclick="abrirHistoria(2)">
+          <img src="imagens/Paroquial.jpeg " alt="História 2">
+          <div class="historia-overlay">
+            <span>Vigário Paroquial</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="stats">
+      <div>
+        <strong class="stat-number">30</strong>
+        <span>Anos de história</span>
+      </div>
+      <div>
+        <strong class="stat-number">12</strong>
+        <span>Grupos pastorais</span>
+      </div>
+      <div>
+        <strong class="stat-number">+2mil</strong>
+        <span>Famílias atendidas</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE HISTÓRIA -->
+  <div class="historia-modal" id="historiaModal">
+    <div class="historia-modal-box">
+      <button class="historia-fechar" onclick="fecharHistoria()">✕</button>
+      <h3 id="modalTitulo"></h3>
+      <p id="modalTexto"></p>
+    </div>
+  </div>
+</section>
 
     <section class="section videos" id="videos">
       <div class="section-title">
@@ -247,8 +270,7 @@
           <p><strong>💬 WhatsApp:</strong> (11) 9 9999-9999</p>
           <p><strong>📧 E-mail:</strong> secretaria@paroquiasaocristovao.com.br</p>
           <p><strong>🕐 Secretaria:</strong> Segunda a Sexta, das 9h às 17h</p>
-
-          <a href="#" class="whatsapp-btn" id="whatsappBtn">Chamar no WhatsApp</a>
+          
         </div>
 
         <div class="mapa">

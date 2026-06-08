@@ -745,4 +745,115 @@ footer small {
   .wpp-chat { bottom: 18px; right: 16px; }
   .wpp-btn { width: 54px; height: 54px; }
   .wpp-bubble { max-width: 180px; padding: 10px 12px; }
+}#sobre .section-title span {
+  margin-top: -20px;
+  display: block;
+}
+
+#sobre .section-title h2 {
+  margin-top: -5px;
+}
+
+#sobre {
+  padding-top: 40px;   /* ← era 80px, reduz o espaço do topo */
+}
+
+.historia-fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.historia-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 500px;        /* ← era 180px, agora mais alto */
+  border: 3px solid var(--vinho);
+  box-shadow: var(--sombra);
+  transition: transform 0.3s;
+}
+
+.historia-card:hover {
+  transform: translateY(-4px);
+}
+
+.historia-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.historia-card:hover img {
+  transform: scale(1.05);
+}
+
+.historia-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(123,28,49,0.85));
+  color: #fff;
+  padding: 20px 12px 12px;
+  font-family: "Cinzel", serif;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* MODAL */
+.historia-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+}
+
+.historia-modal.aberto {
+  display: flex;
+}
+
+.historia-modal-box {
+  background: var(--creme);
+  border-radius: 14px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border-top: 5px solid var(--vinho);
+  animation: slideUpWpp 0.3s ease;
+}
+
+.historia-modal-box h3 {
+  font-family: "Cinzel", serif;
+  color: var(--vinho);
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.historia-modal-box p {
+  color: var(--azul);
+  line-height: 1.8;
+}
+
+.historia-fechar {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.historia-fechar:hover {
+  color: var(--vinho);
 }
